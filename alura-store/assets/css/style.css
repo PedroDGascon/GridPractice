@@ -1,17 +1,48 @@
 .app {
     background: #f1f1f1;
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    /*Definiendo la distribución del GRID LAYOUT se toman como referencia las clases padres que colocamos en nuestro header, main, footer*/
+    grid-template-areas:
+    "header"
+    "contenido"
+    "footer";
+    /* Es el tamano total de la pantalla del navegador */    
+    grid-template-columns: auto; 
+    /*Aqui define  vamos a definir el alto del header, main, footer (Elementos en general pero manejamos ese orden) */
+    grid-template-rows: 50px auto auto;
+
+}
+
+.header{    
+    grid-area: header;
+    align-items: center;
+    display: flex;
+    padding: 0 1rem;
     
 }
 
-.encabezado {
-
-    
+.menu__link{
+    color: #333333;
+    padding: .5rem 1rem;
 }
+
+.menu__link:hover, .menu__link:active{
+    border-bottom: 2px solid #0073e6;
+}
+
 .contenido {
+   
+    grid-area: contenido;
+    padding: 0 2rem;
 
 }
 
-.rodapie { 
-
+.footer { 
+    background: #fdfdfd;
+    color: #333333;
+    padding: 1rem 1rem;
+    text-align: center;
+    grid-area: footer;
     
 }
